@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram MiniApp</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script async src="https://cse.google.com/cse.js?cx=e58c2408882ae476e"></script>
+    <title>Mini App! Linkee iBot | Поиск в Telegram</title>
     <link rel="stylesheet" href="styles.css">
+    <script async src="https://cse.google.com/cse.js?cx=e58c2408882ae476e"></script>
 </head>
-<body>
-    <h1 id="title">Поисковая система</h1>
-    <div class="overlay"></div>
-    <div class="loader"></div>
 
-    <!-- Контейнеры для ввода -->
-    <div id="searchContainer" class="inputContainer">
-        <form id="searchForm" class="wrapper">
-            <input type="text" 
-                   placeholder="Введите запрос" 
-                   id="query" 
-                   required
-                   autocomplete="off">
-            <button type="submit" id="searchButton">🔎 Поиск</button>
+<body>
+    <h1>Mini App!</h1>
+
+    <!-- Main Button -->
+    <div class="button-container">
+        <button id="searchButton">Начать поиск</button>
+    </div>
+
+    <!-- Search Input Container -->
+    <div class="input-container" id="searchContainer">
+        <form id="search-form">
+            <input type="text" id="query" placeholder="Введите запрос для поиска">
+            <button type="submit">🔎 Поиск</button>
         </form>
     </div>
 
-    <div id="questionContainer" class="inputContainer">
-        <div class="wrapper">
-            <input type="text" placeholder="Введите вопрос" id="questionInput" />
-            <button id="questionButton">💭 Задать</button>
-        </div>
+    <!-- Question Input Container -->
+    <div class="input-container" id="questionContainer">
+        <input type="text" placeholder="Задайте свой вопрос">
+        <button>Отправить</button>
     </div>
 
-    <!-- Кнопки переключения -->
-    <div class="container">
-        <button id="mainButton" class="toggleButton">🔎 Начать поиск</button>
-        <button id="toggleSearchButton" class="toggleButton hidden">💭 Задать вопрос</button>
-    </div>
-
-    <!-- Контейнер для результатов -->
+    <!-- Container for displaying search results -->
     <div class="gcse-searchresults-only" id="results"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
