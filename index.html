@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini App! Linkee iBot | Поиск в Telegram</title>
-    <link rel="stylesheet" href="styles.css">
-    <script async src="https://cse.google.com/cse.js?cx=e58c2408882ae476e"></script>
+    <title>Telegram Channel Viewer</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Mini App!</h1>
-
-    <!-- Main Button -->
-    <div class="button-container">
-        <button id="searchButton">Начать поиск</button>
-    </div>
-
-    <!-- Search Input Container -->
-    <div class="input-container" id="searchContainer">
-        <form id="search-form">
-            <input type="text" id="query" placeholder="Введите запрос для поиска">
-            <button type="submit">🔎 Поиск</button>
-        </form>
-    </div>
-
-    <!-- Question Input Container -->
-    <div class="input-container" id="questionContainer">
-        <input type="text" placeholder="Задайте свой вопрос">
-        <button>Отправить</button>
-    </div>
-
-    <!-- Container for displaying search results -->
-    <div class="gcse-searchresults-only" id="results"></div>
-
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let tg = window.Telegram.WebApp;
+            tg.expand();
+            tg.enableClosingConfirmation();
+            
+            // Укажите ссылку на веб-версию канала
+            let channelUrl = "https://t.me/s/channel_8080";
+            
+            // Создаем iframe и загружаем канал
+            let iframe = document.createElement("iframe");
+            iframe.src = channelUrl;
+            document.body.appendChild(iframe);
+        });
+    </script>
 </body>
-
 </html>
- 
